@@ -4,7 +4,13 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 PROVIDER_SNAP=$(cd "$SCRIPT_DIR/../.." && pwd)
 
 export TRIPLET=$(uname -m)-linux-gnu
-export ROS_BASE=$PROVIDER_SNAP/rosruntime
+
+# If consumer already mounted ros-base use that
+if [ -d "$SNAP/rosruntime" ]; then
+    export ROS_BASE=$SNAP/rosruntime
+else
+    export ROS_BASE=$PROVIDER_SNAP/rosruntime
+fi
 
 # Provider FIRST
 source $ROS_BASE/opt/ros/humble/setup.bash

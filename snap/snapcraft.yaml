@@ -59,7 +59,7 @@ parts:
 slots:
   moveit-base:
     interface: content
-    content: executables
+    content: moveit-runtime
     read:
       - /
 
