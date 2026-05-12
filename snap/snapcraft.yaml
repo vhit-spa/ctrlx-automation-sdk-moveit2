@@ -1,6 +1,6 @@
 name: moveit2-base-humble
 title: MoveIt2 snap for ctrlX
-version: '0.1.0'
+version: '1.0.0'
 
 summary: Provides MoveIt2 and ros2_control functionalities for ctrlX CORE
 
@@ -37,10 +37,6 @@ parts:
       - ros-humble-ros2-controllers
       - ros-humble-gripper-controllers
 
-      # Robot resources
-      - ros-humble-moveit-resources-panda-description
-      - ros-humble-moveit-resources-panda-moveit-config
-
       # Utilities
       - ros-humble-xacro
 
@@ -60,17 +56,12 @@ parts:
     organize:
       '*': usr/bin/
 
-apps:
-  demo:
-    command: usr/bin/run-demo.sh
-    environment:
-      ROS_DISTRO: humble
-      RMW_IMPLEMENTATION: rmw_cyclonedds_cpp
-    plugs:
-      - ros-base
-      - datalayer
-      - network
-      - network-bind
+slots:
+  moveit-base:
+    interface: content
+    content: executables
+    read:
+      - /
 
 plugs:
   ros-base:
