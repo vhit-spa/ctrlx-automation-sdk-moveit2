@@ -32,17 +32,24 @@ export PYTHONPATH=$ROS_BASE/lib/python3.10/site-packages:$PYTHONPATH
 export PYTHONPATH=$PROVIDER_SNAP/opt/ros/humble/lib/python3.10/site-packages:$PYTHONPATH
 export PYTHONPATH=$PROVIDER_SNAP/opt/ros/humble/local/lib/python3.10/dist-packages:$PYTHONPATH
 
-# Libraries
+# Provider ROS libs
 export LD_LIBRARY_PATH=$PROVIDER_SNAP/opt/ros/humble/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$PROVIDER_SNAP/opt/ros/humble/lib/$TRIPLET:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$PROVIDER_SNAP/opt/ros/humble/lib/controller_manager:$LD_LIBRARY_PATH
 
+# RViz Ogre vendor
+# export LD_LIBRARY_PATH=$PROVIDER_SNAP/opt/ros/humble/opt/rviz_ogre_vendor/lib:$LD_LIBRARY_PATH
+
+# Provider system libs
+export LD_LIBRARY_PATH=$PROVIDER_SNAP/usr/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$PROVIDER_SNAP/usr/lib/$TRIPLET:$LD_LIBRARY_PATH
+
+# Base provider libs
 export LD_LIBRARY_PATH=$ROS_BASE/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$ROS_BASE/lib/$TRIPLET:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$ROS_BASE/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$ROS_BASE/usr/lib/$TRIPLET:$LD_LIBRARY_PATH
 
-export LD_LIBRARY_PATH=$PROVIDER_SNAP/opt/ros/humble/opt/rviz_ogre_vendor/lib:$LD_LIBRARY_PATH
 
 # Consumer overlay FIRST (if present)
 if [ -d "$SNAP/opt/ros/humble" ]; then
