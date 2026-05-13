@@ -42,6 +42,8 @@ export LD_LIBRARY_PATH=$ROS_BASE/lib/$TRIPLET:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$ROS_BASE/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$ROS_BASE/usr/lib/$TRIPLET:$LD_LIBRARY_PATH
 
+export LD_LIBRARY_PATH=$PROVIDER_SNAP/opt/ros/humble/opt/rviz_ogre_vendor/lib:$LD_LIBRARY_PATH
+
 # Consumer overlay FIRST (if present)
 if [ -d "$SNAP/opt/ros/humble" ]; then
     export AMENT_PREFIX_PATH=$AMENT_PREFIX_PATH:$SNAP/opt/ros/humble
