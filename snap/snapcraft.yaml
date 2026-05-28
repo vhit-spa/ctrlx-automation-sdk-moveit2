@@ -1,6 +1,6 @@
 name: moveit2-base-humble
 title: MoveIt2 snap for ctrlX
-version: '1.0.0'
+version: '1.1.2'
 
 summary: Provides MoveIt2 and ros2_control functionalities for ctrlX CORE
 
@@ -24,10 +24,13 @@ parts:
     source: ./install
     stage-packages:
       # MoveIt2
-      - ros-humble-moveit
+      # - ros-humble-moveit
+      - ros-humble-moveit-core
+      - ros-humble-moveit-ros-planning
       - ros-humble-moveit-ros-move-group
       - ros-humble-moveit-planners-ompl
       - ros-humble-moveit-kinematics
+      - ros-humble-moveit-simple-controller-manager
       # - ros-humble-moveit-ros-perception
       # - ros-humble-moveit-servo
       # - ros-humble-moveit-visual-tools
@@ -42,13 +45,6 @@ parts:
 
       # DDS plugin
       - ros-humble-rmw-cyclonedds-cpp
-
-      # OpenGL runtime
-      - libgl1
-      - libglu1-mesa
-
-      # ctrlX runtime
-      # - ctrlx-datalayer
 
   scripts:
     plugin: dump
