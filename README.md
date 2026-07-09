@@ -1,11 +1,11 @@
 # MoveIt!2 Ctrlx Automation SDK
 
-This repository contains a MoveIt 2 overlay snap build setup for ctrlX CORE, targeting ROS 2 Humble.
+This repository contains a MoveIt 2 overlay snap build setup for ctrlX CORE, targeting ROS 2 jazzy.
 It packages the MoveIt 2 runtime, ROS 2 control runtime, and helper scripts into a snap overlay that can be combined with a ctrlX ROS base snap.
 
 ## Prerequisites
 
-- A working ROS 2 Humble installation.
+- A working ROS 2 jazzy installation.
 - `colcon`, `rosdep`, and `snapcraft` available on the build host.
 - The `ctrlx-automation-sdk` repository available for ctrlX SDK support.
 - The `ctrlx-automation-sdk-ros2` repository available for ROS 2 integration with ctrlX.
@@ -29,7 +29,7 @@ It packages the MoveIt 2 runtime, ROS 2 control runtime, and helper scripts into
 ./build-snap.sh
 ```
 
-The resulting snap file will be created in the repository root, such as `moveit2-base-humble_1.0.0_amd64.snap`.
+The resulting snap file will be created in the repository root, such as `moveit2-base-jazzy_1.0.0_amd64.snap`.
 
 ## Build an application snap (example)
 
@@ -40,7 +40,7 @@ Example steps for the demo application repository:
 
 ```bash
 cd ~/ctrlx-ros-moveit-demo
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 ./build-snap.sh
 ```
 
