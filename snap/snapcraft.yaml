@@ -1,21 +1,21 @@
-name: moveit2-base-humble
+name: moveit2-base-jazzy
 title: MoveIt2 snap for ctrlX
-version: '1.1.2'
+version: '2.1.2'
 
 summary: Provides MoveIt2 and ros2_control functionalities for ctrlX CORE
 
 description: |
-  MoveIt2 overlay snap running on top of ros2-base-humble.
+  MoveIt2 overlay snap running on top of ros2-base-jazzy.
 
-base: core22
+base: core24
 
 grade: devel
 confinement: strict
 
-architectures:
-  - build-on: [amd64, arm64]
-    build-for: [amd64]
-  - build-on: [amd64, arm64]
+platforms:
+  amd64:
+  arm64:
+    build-on: [amd64, arm64]
     build-for: [arm64]
 
 parts:
@@ -24,27 +24,27 @@ parts:
     source: ./install
     stage-packages:
       # MoveIt2
-      # - ros-humble-moveit
-      - ros-humble-moveit-core
-      - ros-humble-moveit-ros-planning
-      - ros-humble-moveit-ros-move-group
-      - ros-humble-moveit-planners-ompl
-      - ros-humble-moveit-kinematics
-      - ros-humble-moveit-simple-controller-manager
-      # - ros-humble-moveit-ros-perception
-      # - ros-humble-moveit-servo
-      # - ros-humble-moveit-visual-tools
+      # - ros-jazzy-moveit
+      - ros-jazzy-moveit-core
+      - ros-jazzy-moveit-ros-planning
+      - ros-jazzy-moveit-ros-move-group
+      - ros-jazzy-moveit-planners-ompl
+      - ros-jazzy-moveit-kinematics
+      - ros-jazzy-moveit-simple-controller-manager
+      # - ros-jazzy-moveit-ros-perception
+      # - ros-jazzy-moveit-servo
+      # - ros-jazzy-moveit-visual-tools
 
       # ros2_control
-      - ros-humble-ros2-control
-      - ros-humble-ros2-controllers
-      - ros-humble-gripper-controllers
+      - ros-jazzy-ros2-control
+      - ros-jazzy-ros2-controllers
+      - ros-jazzy-gripper-controllers
 
       # Utilities
-      - ros-humble-xacro
+      - ros-jazzy-xacro
 
       # DDS plugin
-      - ros-humble-rmw-cyclonedds-cpp
+      - ros-jazzy-rmw-cyclonedds-cpp
 
   scripts:
     plugin: dump
