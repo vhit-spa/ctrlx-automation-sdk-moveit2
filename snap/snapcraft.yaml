@@ -9,7 +9,7 @@ description: |
 
 base: core22
 
-grade: release
+grade: stable
 confinement: strict
 
 architectures:
