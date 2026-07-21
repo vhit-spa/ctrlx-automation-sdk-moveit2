@@ -1,6 +1,6 @@
 name: moveit2-base-humble
 title: MoveIt2 snap for ctrlX
-version: '1.1.2'
+version: '1.1.3'
 
 summary: Provides MoveIt2 and ros2_control functionalities for ctrlX CORE
 
@@ -9,7 +9,7 @@ description: |
 
 base: core22
 
-grade: devel
+grade: release
 confinement: strict
 
 architectures:
