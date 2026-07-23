@@ -18,6 +18,15 @@ architectures:
   - build-on: [amd64, arm64]
     build-for: [arm64]
 
+package-repositories:
+  - type: apt
+    url: http://packages.ros.org/ros2/ubuntu
+    suites:
+      - jammy
+    components:
+      - main
+    key-id: C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
 parts:
   moveit-base:
     plugin: nil
