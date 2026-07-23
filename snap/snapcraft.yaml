@@ -20,11 +20,9 @@ architectures:
 
 parts:
   moveit-base:
-    plugin: dump
-    source: ./install
+    plugin: nil
     stage-packages:
       # MoveIt2
-      # - ros-humble-moveit
       - ros-humble-moveit-core
       - ros-humble-moveit-ros-planning
       - ros-humble-moveit-ros-move-group
